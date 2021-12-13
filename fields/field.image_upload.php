@@ -520,7 +520,10 @@
 					return parent::prepareTableValue(null);
 				}
 			}
-
+      
+      $data['width'] = $data['width'] ?? null;
+      $data['height'] = $data['height'] ?? null;
+      
 			if ($data['width'] > $data['height']) {
 				$width  = 40;
 				$height = 0;
