@@ -310,10 +310,12 @@
 
 			// run basic upload check
 			$error = parent::checkPostFieldData($data, $message, $entry_id);
-
+      $tmp_name = '';
+      $type = '';
+      
 			// test for minimum dimensions
 			if ($error == self::__OK__) {
-
+        
 				// new file
 				if (is_array($data)) {
 					$tmp_name = $data['tmp_name'];
@@ -326,7 +328,8 @@
 						$type     = 'image/jpg'; // send some dummy data
 					}
 				}
-
+        
+        
 				$meta = static::getMetaInfo($tmp_name, $type);
 
 				// If we found some dimensions
