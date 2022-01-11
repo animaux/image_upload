@@ -285,6 +285,7 @@
 
 			$settings['field_id']    = $id;
 			$settings['destination'] = $this->get('destination');
+			$settings['validator'] = $settings['validator'] ?? null;
 			$settings['validator']   = ($settings['validator'] == 'custom' ? null : $this->get('validator'));
 			$settings['unique']      = $this->get('unique');
 			$settings['min_width']   = $this->get('min_width');

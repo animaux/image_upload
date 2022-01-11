@@ -24,6 +24,9 @@
 		<dependency version="1.15">https://github.com/symphonycms/jit_image_manipulation</dependency>
 	</dependencies>
 	<releases>
+	  <release version="1.6.9" date="2022-01-11" min="2.7.10" max="2.x.x">
+	    - PHP8 undefined vars fix
+	  </release>
 	  <release version="1.6.8" date="2021-12-14" min="2.7.10" max="2.x.x">
 	    - PHP8 undefined vars fix
 	  </release>
