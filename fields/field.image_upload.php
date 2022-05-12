@@ -392,7 +392,7 @@
 		}
 
 		public function processRawFieldData($data, &$status, &$message = null, $simulate = false, $entry_id = null)
-		{
+		{		  
 			if (!is_array($data) && !is_string($data)) {
 				return parent::processRawFieldData($data, $status, $message, $simulate, $entry_id);
 			}
@@ -440,7 +440,7 @@
 			else if (is_array($data)) {
 
 				// 1. resize
-				if ($this->isResizeActive() && !static::isSvg($result['mimetype'])) {
+				if ($this->isResizeActive() && !static::isSvg($result['mimetype'] ?? null)) {
 
 					if ((!empty($max_width) && ($max_width > 0)) || (!empty($max_height) && ($max_height > 0))) {
 						if (is_file($file = $data['tmp_name'])) {
@@ -516,6 +516,7 @@
 
 		public function prepareTableValue($data, XMLElement $link = null, $entry_id = null)
 		{
+		  $data['file'] = $data['file'] ?? null;
 			if (!$file = $data['file']) {
 				if ($link) {
 					return parent::prepareTableValue(null, $link);
